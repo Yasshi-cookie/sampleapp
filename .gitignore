@@ -21,10 +21,4 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-<<<<<<< HEAD
-
-# Ignore Spring files.
-/spring/*.pid
-=======
 .DS_Store
->>>>>>> remove .DS_Store
