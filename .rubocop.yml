@@ -5,6 +5,3 @@ AsciiComments:
 # クラスにコメントを残さないでも良い
 Documentation:
   Enabled: false
-# compact styleも許可する
-ClassAndModuleChildren:
-  Enabled: false
