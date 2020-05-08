@@ -53,6 +53,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.1'
   # Use rubocop
   gem 'rubocop'
+  # Use scss-lint
+  gem 'scss_lint', require: false
 end
 
 group :test do
