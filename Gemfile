@@ -13,8 +13,6 @@ gem 'rails', '~> 5.1.6'
 gem 'bcrypt',         '3.1.12'
 # Use bootstrap-sass
 gem 'bootstrap-sass', '3.3.7'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.13'
 # Use Puma as the app server
 gem 'puma', '~> 3.9.1'
 # Use SCSS for stylesheets
@@ -45,6 +43,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'sqlite3', '1.3.13'
 end
 
 group :development do

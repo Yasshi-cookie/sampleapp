@@ -26,3 +26,4 @@ Layout/LineLength:
     - 'Gemfile'
     - 'Rakefile'
     - 'db/seeds.rb'
+    - 'db/schema.rb'
