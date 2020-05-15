@@ -1,8 +1,14 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
 <%= @user.email %> <br>
 <%= @user.created_at %>, <%= @user.updated_at %> <br> <!-- ユーザー情報の作成日時と更新日時を表示 -->
 <%= Time.now %> <!-- 現在時刻を表示 -->
