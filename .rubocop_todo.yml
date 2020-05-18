@@ -27,3 +27,8 @@ Layout/LineLength:
     - 'Rakefile'
     - 'db/seeds.rb'
     - 'db/schema.rb'
+
+# isから始まるメソッド名も許可する
+Naming/PredicateName:
+  Exclude:
+    - 'test/test_helper.rb'
