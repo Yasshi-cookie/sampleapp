@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
+    # 「userが有効かつ、そのuserのpasswordが正しければ」の意味
     if user&.authenticate(params[:session][:password])
-      # 「userが有効かつ、そのuserのpasswordが正しければ」の意味
       log_in user
       redirect_to user
     else
