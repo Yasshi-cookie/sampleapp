@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       # 「userが有効かつ、そのuserのpasswordが正しければ」の意味
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
     else
-      flash[:danger] = 'Invalid email/password combination' # 本当は正しくない
+      flash.now[:danger] = 'Invalid email/password combination'
+      # flash.nowのメッセージは、その後リクエストが発生したときに消滅する
       render 'new'
     end
   end
