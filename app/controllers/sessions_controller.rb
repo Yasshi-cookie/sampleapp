@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       # 「userが有効かつ、そのuserのpasswordが正しければ」の意味
-      # ユーザーログイン後にユーザー情報のページにリダイレクトする
+      log_in user
+      redirect_to user
     else
       flash.now[:danger] = 'Invalid email/password combination'
       # flash.nowのメッセージは、その後リクエストが発生したときに消滅する
