@@ -54,6 +54,7 @@ group :development do
   gem 'spring', '2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.1'
   # Use rubocop
+  gem 'pre-commit'
   gem 'rubocop'
   # Use scss-lint
   gem 'scss_lint', require: false
