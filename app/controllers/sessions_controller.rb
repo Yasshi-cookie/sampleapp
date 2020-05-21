@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     if user&.authenticate(params[:session][:password])
-      login_and_remember
+      log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to user
     else
@@ -23,10 +23,5 @@ class SessionsController < ApplicationController
 
   def user
     @user ||= User.find_by(email: params[:session][:email].downcase)
-  end
-
-  def login_and_remember
-    log_in user
-    remember user
   end
 end
