@@ -12,13 +12,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_511_074_409) do
+ActiveRecord::Schema.define(version: 20_200_521_041_239) do
   create_table 'users', force: :cascade do |t|
     t.string 'name', limit: 50, null: false
     t.string 'email', limit: 255, null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.string 'password_digest', default: '', null: false
+    t.string 'remember_digest', default: '', null: false
     t.index ['email'], name: 'index_users_on_email', unique: true
   end
 end
