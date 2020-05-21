@@ -8,3 +8,6 @@ Documentation:
 # compact styleの適用も許可する
 ClassAndModuleChildren:
   Enabled: false
+#ABCMetricSizeのチェックの基準値を20にする
+Metrics/AbcSize:
+  Max: 20
