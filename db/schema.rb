@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20_200_521_041_239) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.string 'password_digest', default: '', null: false
-    t.string 'remember_digest', default: '', null: false
+    t.string 'remember_digest'
     t.index ['email'], name: 'index_users_on_email', unique: true
   end
 end
