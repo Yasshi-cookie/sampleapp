@@ -32,3 +32,8 @@ Layout/LineLength:
 Naming/PredicateName:
   Exclude:
     - 'test/test_helper.rb'
+
+# if文の条件式の括弧の省略を許可する
+Lint/AssignmentInCondition:
+  Exclude:
+    - 'app/helpers/sessions_helper.rb'
