@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[index edit update destroy]
-  before_action :correct_user,   only: %i[edit update]
-  before_action :admin_user,     only: :destroy
+  before_action :logged_in_user,          only: %i[index edit update destroy]
+  before_action :correct_user,            only: %i[edit update]
+  before_action :authenticate_admin_user, only: :destroy
 
   def index
     @users = User.paginate(page: params[:page])
@@ -35,6 +35,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Profile updated'
       redirect_to @user
     else
+      flash[:alert] = @user.errors.full_messages.join
       render 'edit'
     end
   end
@@ -70,7 +71,7 @@ class UsersController < ApplicationController
   end
 
   # 管理者かどうか確認
-  def admin_user
+  def authenticate_admin_user
     redirect_to(root_url) unless current_user.admin?
   end
 end
