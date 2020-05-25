@@ -11,6 +11,11 @@ end
 gem 'rails', '~> 5.1.6'
 # Use bcrypt to hash password
 gem 'bcrypt',         '3.1.12'
+# Use faker: create sample users
+gem 'faker',          '1.7.3'
+# Use will_paginate: pagenation method
+gem 'bootstrap-will_paginate', '1.0.0'
+gem 'will_paginate',           '3.1.6'
 # Use bootstrap-sass
 gem 'bootstrap-sass', '3.3.7'
 # Use Puma as the app server

@@ -1,0 +1,13 @@
+<!--yieldメソッドに渡すページタイトル-->
+<% provide(:title, 'Edit user') %>
+<!--yieldメソッドに渡すページurl-->
+<% provide(:url, user_path) %>
+<!--yieldメソッドに渡すボタンに表示する文字-->
+<% provide(:button_text, 'Save changes') %>
+<h1>Update your profile</h1>
+  <!--フォームのパーシャルを呼び出し-->
+  <%= render 'form' %>
+  <div class="gravatar_edit">
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails" rel="noopener" target="_blank">Change</a>
+  </div>
