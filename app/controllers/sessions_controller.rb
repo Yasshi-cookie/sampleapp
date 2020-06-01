@@ -24,8 +24,7 @@ class SessionsController < ApplicationController
   end
 
   def flash_message_for_non_activated_account
-    message  = 'Account not activated. '
-    message += 'Check your email for the activation link.'
+    message = 'Account not activated. Check your email for the activation link.'
     flash[:warning] = message
   end
 
