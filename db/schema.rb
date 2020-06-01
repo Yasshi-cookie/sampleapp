@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_528_044_405) do
+ActiveRecord::Schema.define(version: 20_200_601_072_107) do
   create_table 'users', force: :cascade do |t|
     t.string 'name', limit: 50, null: false
     t.string 'email', limit: 255, null: false
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20_200_528_044_405) do
     t.string 'activation_digest'
     t.boolean 'activated', default: false
     t.datetime 'activated_at'
+    t.string 'reset_digest'
+    t.datetime 'reset_sent_at'
     t.index ['email'], name: 'index_users_on_email', unique: true
   end
 end
