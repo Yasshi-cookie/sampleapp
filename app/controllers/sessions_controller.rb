@@ -23,18 +23,13 @@ class SessionsController < ApplicationController
     @user ||= User.find_by(email: params[:session][:email].downcase)
   end
 
-  def flash_message_for_non_activated_account
-    message = 'Account not activated. Check your email for the activation link.'
-    flash[:warning] = message
-  end
-
   def do_in_the_case_valid_user
     if user.activated?
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_back_or user
     else
-      flash_message_for_non_activated_account
+      flash[:warning] = 'Account not activated. Check your email for the activation link.'
       redirect_to root_url
     end
   end
