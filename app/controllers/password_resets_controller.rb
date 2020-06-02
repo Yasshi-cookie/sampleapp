@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PasswordResetsController < ApplicationController
-  before_action :get_user,   only: %i[edit update]
+  before_action :set_user,   only: %i[edit update]
   before_action :valid_user, only: %i[edit update]
   before_action :check_expiration, only: %i[edit update] # パスワード再設定の有効期限が切れていないかをチェックする
 
@@ -48,16 +48,13 @@ class PasswordResetsController < ApplicationController
 
   # beforeフィルタ
 
-  def get_user
+  def set_user
     @user = User.find_by(email: params[:email])
   end
 
   # 正しいユーザーかどうか確認する
   def valid_user
-    unless @user&.activated? &&
-           @user&.authenticated?(:reset, params[:id])
-      redirect_to root_url
-    end
+    redirect_to root_url unless @user&.activated? && @user&.authenticated?(:reset, params[:id])
   end
 
   # トークンが期限切れかどうか確認する
