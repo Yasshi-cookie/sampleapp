@@ -27,7 +27,7 @@ class PasswordResetsController < ApplicationController
       @user.errors.add(:password, :blank)
       render 'edit'
     elsif @user.update_attributes(user_params) # 新しいパスワードが正しければ更新する
-      log_in @user
+      log_in_user_and_update_reset_digest_to_nil
       flash[:success] = 'Password has been reset.'
       redirect_to @user
     else
@@ -36,6 +36,11 @@ class PasswordResetsController < ApplicationController
   end
 
   private
+
+  def log_in_user_and_update_reset_digest_to_nil
+    log_in @user
+    @user.update_attribute(:reset_digest, nil) # @userのreset_digestの値をnilに更新して保存
+  end
 
   def user_params
     params.require(:user).permit(:password, :password_confirmation)
