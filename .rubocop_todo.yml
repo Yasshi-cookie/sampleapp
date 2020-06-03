@@ -12,14 +12,13 @@ Style/MixinUsage:
     - 'bin/setup'
     - 'bin/update'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
+# blockの長さが任意のものも許可する
 Metrics/BlockLength:
   Exclude:
     - 'Gemfile'
     - 'Guardfile'
     - 'config/environments/production.rb'
+    - 'test/**/*'
 
 # Offense count: 7
 Layout/LineLength:
@@ -33,6 +32,11 @@ Layout/LineLength:
 Naming/PredicateName:
   Exclude:
     - 'test/test_helper.rb'
+
+# getから始まるメソッド名も許可する
+Naming/AccessorMethodName:
+  Exclude:
+    - 'app/controllers/password_resets_controller.rb'
 
 # if文の条件式の括弧の省略を許可する
 Lint/AssignmentInCondition:
