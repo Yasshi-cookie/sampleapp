@@ -12,6 +12,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  has_many :microposts
   has_secure_password
 
   # 渡された文字列のハッシュ値を返す
