@@ -13,6 +13,10 @@ gem 'rails', '~> 5.1.6'
 gem 'bcrypt',         '3.1.12'
 # Use faker: create sample users
 gem 'faker',          '1.7.3'
+# picture uploader
+gem 'carrierwave',             '1.2.2'
+# Use mini_magick to resize picture
+gem 'mini_magick',             '4.7.0'
 # Use will_paginate: pagenation method
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'will_paginate',           '3.1.6'
@@ -74,6 +78,7 @@ group :test do
 end
 
 group :production do
+  gem 'fog', '1.42'
   gem 'pg', '0.20.0'
 end
 

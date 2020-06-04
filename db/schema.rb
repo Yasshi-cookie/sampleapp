@@ -12,7 +12,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_601_072_107) do
+ActiveRecord::Schema.define(version: 20_200_604_051_704) do
+  create_table 'microposts', force: :cascade do |t|
+    t.text 'content'
+    t.integer 'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'picture'
+    t.index %w[user_id created_at], name: 'index_microposts_on_user_id_and_created_at'
+    t.index ['user_id'], name: 'index_microposts_on_user_id'
+  end
+
   create_table 'users', force: :cascade do |t|
     t.string 'name', limit: 50, null: false
     t.string 'email', limit: 255, null: false
