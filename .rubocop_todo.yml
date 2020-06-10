@@ -19,6 +19,7 @@ Metrics/BlockLength:
     - 'Guardfile'
     - 'config/environments/production.rb'
     - 'test/**/*'
+    - 'db/schema.rb'
 
 # Offense count: 7
 Layout/LineLength:
