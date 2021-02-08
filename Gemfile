@@ -14,7 +14,7 @@ gem 'bcrypt',         '3.1.12'
 # Use faker: create sample users
 gem 'faker',          '1.7.3'
 # picture uploader
-gem 'carrierwave',             '1.2.2'
+gem 'carrierwave',             '1.3.2'
 # Use mini_magick to resize picture
 gem 'mini_magick',             '4.7.0'
 # Use will_paginate: pagenation method
